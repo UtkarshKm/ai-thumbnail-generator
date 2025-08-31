@@ -136,6 +136,7 @@ export default function Page() {
 	// Remember last request to support "Regenerate"
 	const lastRequestRef = useRef<{
 		route: "/api/generate" | "/api/edit";
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		payload: any;
 	} | null>(null);
 
@@ -317,6 +318,7 @@ export default function Page() {
 					timestamp: Date.now(),
 				});
 			}
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		} catch (err: any) {
 			setError(
 				err?.message || "Something went wrong while processing your request."
@@ -355,6 +357,7 @@ export default function Page() {
 				answers,
 				timestamp: Date.now(),
 			});
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		} catch (err: any) {
 			setError(err?.message || "Could not regenerate the image.");
 		} finally {
